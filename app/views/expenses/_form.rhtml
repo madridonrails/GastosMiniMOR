@@ -1,0 +1,90 @@
+<% 
+	cancel_url = {:action => @cancel, :id => @expense}
+	cancel_url.merge!(:from => params[:from]) if params[:from]
+	submit_url = {:action => @submit, :id => @expense}
+	submit_url.merge!(:from => params[:from], :from_id => params[:id]) if params[:from] && params[:id]
+ %>
+<% if table %>
+<td colspan='10' style='padding:0px'>
+<% end %>
+	<% form_for :expense, :url => submit_url, :html => {:id => 'expense-form'} do |form| %>
+	<div id="EditGastoArea">
+		<div id="EditColumnRight">
+			<!-- importe -->
+			<div id="EditColumnRightRow">
+				<div id="EditColumnRightB" class="Fecha11White">
+	  				<%= form.text_field :amount, :size => 20, :maxlength => 20 %>
+					<%= errors_for_attr :expense, :amount %>
+	  			</div>
+				<div id="EditColumnRightA" class="Title11DarkGrey"><label for="expense_amount">Importe* </label></div>
+			</div>
+			<!-- importe -->
+			<!-- comentarios -->
+			<div id="EditColumnRightRow">
+				<div id="EditColumnRightB" class="Fecha11White">
+	  				<%= form.text_area :notes, :class => 'comentarios', :wrap => 'soft', :rows => 4, :cols => 35 %>
+				</div>
+				<div id="EditColumnRightA" class="Title11DarkGrey"><label for="expense_notes">Comentarios </label></div>
+			</div>
+			<!-- comentarios -->
+			<!-- botones -->
+			<div id="EditColumnRightRow">
+				<div id="EditColumnRightButtons" class="Fecha11White">
+					<%= submit_to_remote 'Cancelar', 'Cancelar', {:url => cancel_url, :html => {:class => 'button'}} %>
+		  			&nbsp; &nbsp; &nbsp;
+					<%= submit_to_remote 'Guardar', 'Guardar', {:url => submit_url, :html => {:class => 'button'}} %> &nbsp; &nbsp; &nbsp;
+				</div>
+				<div id="EditColumnRightA" class="Title11DarkGrey"></div>
+			</div>
+			<!-- botones -->
+		</div>
+		<div id="EditColumnLeft">
+			<!-- fecha -->
+			<div id="EditColumnLeftRow">
+				<div id="EditColumnLeftB" class="Fecha11White">
+					<%= form.text_field :date, :size => 11, :value => format_date(@expense.date), :onkeypress => 'return ignore_newline(event)' %>
+			  		<%= date_picker 'expense_date' %>
+					<%= errors_for_attr :expense, :date %>
+			  </div>
+				<div id="EditColumnLeftA" class="Title11DarkGrey">Fecha* </label></div>
+			</div>
+			<!-- fecha -->
+			<!-- Categoría -->
+			<div id="EditColumnLeftRow">
+				<div id="EditColumnLeftB" class="Fecha11White">
+					<%= render :partial => 'expenses/project' %>
+			  	</div>
+				<div id="EditColumnLeftA" class="Title11DarkGrey"><label for="expense_project_id">Categoría* </label></div>
+			</div>
+			<!-- Categoría -->
+			<!-- tipo gasto -->
+			<div id="EditColumnLeftRow">
+				<div id="EditColumnLeftB" class="Fecha11White">
+					<%= render :partial => 'expenses/expense_type' %>
+			  	</div>
+				<div id="EditColumnLeftA" class="Title11DarkGrey"><label for="expense_expense_type_id">Tipo gasto* </label></div>
+			</div>
+			<!-- tipo gasto -->
+			<!-- concepto -->
+			<div id="EditColumnLeftRow">
+				<div id="EditColumnLeftB" class="Fecha11White">
+					<%= form.text_field :concept, :size => 30, :maxlength => 30 %>
+					<%= errors_for_attr :expense, :concept %>
+			  	</div>
+				<div id="EditColumnLeftA" class="Title11DarkGrey"><label for="expense_concept">Concepto* </label></div>
+			</div>
+			<!-- concepto -->
+			<!-- sobre -->
+			<div id="EditColumnLeftRow">
+				<div id="EditColumnLeftB" class="Fecha11White">
+					<%= form.text_field :envelope, :size => 30, :maxlength => 30 %>
+			  	</div>
+				<div id="EditColumnLeftA" class="Title11DarkGrey"><label for="expense_envelope">Sobre </label></div>
+			</div>
+			<!-- sobre -->
+		</div>
+	</div>
+	<% end %>
+<% if table %>
+</td>
+<% end %>

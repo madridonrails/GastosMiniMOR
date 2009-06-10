@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title><%= APP_NAME %>: update hot editable</title>
+    <style type="text/css" media="screen">
+      body {
+        background:  black;
+        color:       #ddd;
+        font-family: sans-serif;
+        margin: 20px 20px 20px 20px;
+      }
+      a {
+        color: yellow;
+      }      
+    </style>
+  </head>
+  <body>
+    <p>Actualización desde IP <strong><%= @ip %></strong>:</p>
+    <pre>
+  <%=h @svn.sub(/\s+\z/, '').gsub(/\n/, "\n  ") %>
+    </pre>
+    <p><a href="/">Ir a la home</a></p>
+  </body>
+</html>

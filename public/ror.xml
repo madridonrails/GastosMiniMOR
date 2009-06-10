@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for http://www.gastosmini.com/</title>
+  <link>http://www.gastosmini.com/</link>
+  <item>
+    <title>ROR Sitemap for http://www.gastosmini.com/</title>
+    <link>http://www.gastosmini.com/</link>
+    <ror:about>sitemap</ror:about>
+    <ror:type>SiteMap</ror:type>
+  </item>
+
+<item>
+     <link>http://www.gastosmini.com/</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/tour</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/help</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/contact</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/tour/new_invoice</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/tour/print</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/tour/project</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/tour/expense_type</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/tour/for_projects</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/tour/for_agencies</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/help/about</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/help/expenses</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/help/general</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.gastosmini.com/public/tour/</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.gastosmini.com/public/signup</link>
+     <title>GASTOSmini: servicio on-line para gastos</title>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  

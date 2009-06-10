@@ -1,0 +1,34 @@
+﻿<div class="Title24Orange" id="titlearea">
+  <%= link_to 'Ayuda', :action => 'help', :section => nil %>
+  <span class="Text18Orange">&gt;</span>
+  Sobre los gastos
+  </div>
+
+<div id="highlightareaAyuda">
+  <div id="textareaAyuda">
+    
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" name="cambiar_fecha">&iquest;Puedo cambiar la fecha de mis gastos?</span>
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+      S&iacute;. <%= APP_NAME %> te deja cambiar todos los datos de los gastos que quieras, al fin y al
+      cabo son tus datos ;-). Si te equivocaste al entrar la fecha o cualquier otra cosa
+      puedes corregir el gasto siguiendo el enlace &laquo;Modificar gasto&raquo; que
+      encontrar&aacute;s en la fila correspondiente al gasto en la lista de gastos.
+    </div>
+<br />
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" name="divisas" >&iquest;Soporta <%= APP_NAME %> varias divisas?</span>
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+      No, lo sentimos. Por el momento s&oacute;lo es posible imputar gastos en euros. La raz&oacute;n por
+      la que no lo soportamos es porque hemos querido hacer una aplicaci&oacute;n muy f&aacute;cil de manejar. 
+	El soporte multi-moneda tiene un coste en complejidad del programa para todos los usuarios
+	y por el momento nos ha parecido que no incluirlo era la mejor opci&oacute;n en ese sentido. De 
+	todos modos, es algo que quiz&aacute; a&ntilde;adamos en el futuro en funci&oacute;n de su demanda.
+    </div>
+<br />
+    
+    <%= date_una_vuelta_o_registrate %>
+  </div>
+</div>

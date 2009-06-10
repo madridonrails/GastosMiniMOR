@@ -1,0 +1,35 @@
+<div id="TableFastLinks" class="TextLinks11Grey">
+	<% unless logged_in_as_guest? -%>		
+		<% icon = 'Añadir un nuevo gasto ' + image_tag('icon-addGasto2.gif', :width => 16, :height => 16, :align => 'absmiddle') %>
+	    <%= link_to_remote "#{icon}", {:url => {:action => 'add'}} %>
+		<span class="TextDivider11Grey">|</span>
+		<% icon = 'Importar gastos <span class="TextLinks11Orange">CSV </span>' + image_tag('icon-importgastos.gif', :align => 'absmiddle') %>
+	    <%= link_to_remote "#{icon}", {:url => {:action => 'import'}} %>
+		<span class="TextDivider11Grey">|</span>
+		<% icon = 'Exportar gastos ' + image_tag('icon-exportgastos.gif', :align => 'absmiddle') %>
+	  	<%= link_to "#{icon}", :controller => 'expenses', :action => 'export' %>
+	  	<span class="TextDivider11Grey">|</span>
+	<% end -%>
+	<% icon = 'Filtrar la información ' + image_tag('icon-filter.gif', :width => 16, :height => 16, :align => 'absmiddle') %>
+    <%= link_to_remote "#{icon}", {:url => {:action => 'show_filter'}} %>	
+</div>
+
+<div id="GastoDatos">
+	<div id='NuevoGasto' class='notadding' style='display: none'>
+		<%=render :partial => 'form', :locals => {:table => false} %>
+	</div>
+	<% if can_write? %>	
+		<%= render :partial => 'redbox_for_new_project' %>
+		<%= render :partial => 'redbox_for_new_expense_type' %>
+		<div id='ImportGastos' class='notimporting' style='display: none'>
+			<%= render :partial => 'import_expenses' %>
+		</div>
+	<% end %>
+	<div id='Filter' class='notfiltering' style='display: none'>
+		<%= render :partial => 'filter' %>
+	</div>
+	
+  	<div id="list">
+    	<%= render :partial => 'list' %>
+  	</div>
+</div>

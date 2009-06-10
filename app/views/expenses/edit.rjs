@@ -1,0 +1,3 @@
+page.hide_upper_divs
+page.reset_expenses_lines
+page.show_expense_edition(@expense)

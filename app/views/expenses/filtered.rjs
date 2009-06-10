@@ -1,0 +1,2 @@
+page.replace_html 'list', :partial => 'list'
+page.replace_html 'pending', :partial => 'shared/top_status'

@@ -1,0 +1,34 @@
+# == Schema Information
+# Schema version: 2
+#
+# Table name: projects
+#
+#  id                      :integer(11)   not null, primary key
+#  account_id              :integer(11)   not null
+#  url_id                  :string(255)   not null
+#  name                    :string(255)   
+#  name_for_sorting        :string(255)   
+#  description             :string(255)   
+#  description_for_sorting :string(255)   
+#  notes                   :text          
+#  created_at              :datetime      
+#  updated_at              :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+especial:
+  id: 1
+  account_id: 1
+  url_id: "especial"
+  name: "Especial"
+  description: "Especial"
+  name_for_sorting: "especial"
+  description_for_sorting: "especial"
+cine:
+  id: 2
+  account_id: 1
+  url_id: "cine"
+  name: "Cine"
+  description: "Cine"
+  name_for_sorting: "cine"
+  description_for_sorting: "cine"

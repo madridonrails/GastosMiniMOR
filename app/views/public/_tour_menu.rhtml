@@ -1,0 +1,38 @@
+﻿<div class="Title24Orange" id="titlearea">
+      Date una vuelta y verás que fácil es <%= APP_NAME %> .
+</div>
+
+<%
+  # This is a set of pairs, template, text seen the interface.
+  #
+  # If the first component is "customer", we expect a template called
+  #
+  #   views/tour_customer.rhtml.
+  #
+  # These are names of sections of the tour, that's why the template
+  # has a prefix tour.
+  sections = [
+    ['',              'Presentación'],
+    ['new_expense',   'Nuevo gasto'],
+    ['import',     'Importar/Exportar'],
+    ['Shared_all',  'Compartir gastos']
+  ]
+  
+  menu = []
+  sections.each do |section, label|
+    entry = '<li>'
+    if section == @current_section
+      entry << %Q{<span class="onTour">#{label}</span>}
+    else
+      entry << link_to(label, :controller => 'public', :action => 'tour', :section => section)
+    end
+    entry << '</li>'
+    menu << entry
+  end
+%>
+
+<div class="Title24Orange" id="menuTour">
+  <ul>
+    <%= menu.join('<li> | </li>') %>
+  </ul>
+</div>

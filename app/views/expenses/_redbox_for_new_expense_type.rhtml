@@ -1,0 +1,20 @@
+<div id="redbox-for-new-expense-type" style="display: none; width: 700px;">
+  <div style="margin: 10px">
+    <div style="padding: 10px">
+    <% form_remote_tag :url => {:controller => 'expense_types', :action => 'create_for_expense'} do %>
+      <% @expense_type = ExpenseType.new %>
+      <%= render :partial => 'expense_types/form' %>
+      <table width="100%"  border="0" cellspacing="10" cellpadding="0">
+        <tr>
+          <td width="50%" class="CellTablebuttonL">
+            <%= button_to_function 'Cancelar', "RedBox.close()", :class => 'button' %>
+          </td>
+          <td width="50%" class="CellTablebuttonR" align="right">
+            <%= submit_tag 'Crear tipo de gasto', :class => 'button' %>
+          </td>
+      	</tr>
+      </table>
+    <% end %>
+    </div>
+  </div>
+</div>

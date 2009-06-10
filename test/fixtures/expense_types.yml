@@ -1,0 +1,33 @@
+# == Schema Information
+# Schema version: 2
+#
+# Table name: expense_types
+#
+#  id               :integer(11)   not null, primary key
+#  account_id       :integer(11)   not null
+#  url_id           :string(255)   not null
+#  name             :string(255)   not null
+#  name_for_sorting :string(255)   
+#  created_at       :datetime      
+#  updated_at       :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+transporte:
+  id: 1
+  account_id: 1
+  url_id: 'transporte'
+  name: 'Transporte'
+  
+parking:
+  id: 2
+  account_id: 1
+  url_id: 'parking'
+  name: 'Parking'
+
+comida:
+  id: 3
+  account_id: 1
+  url_id: 'comida'
+  name: 'Comida'
+

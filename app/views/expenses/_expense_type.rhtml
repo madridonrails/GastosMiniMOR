@@ -1,0 +1,5 @@
+<span id="expense-expense-type">
+    <%= expense_type_selector :expense, :expense_type_id, @current_account, 'Tipo de gasto', @expense.expense_type_id %>
+  	<%= link_to_redbox '[Nuevo]', 'redbox-for-new-expense-type' %>
+	<%= errors_for_attr :expense, :expense_type_id %>
+</span>

@@ -1,0 +1,62 @@
+<div id="GastoDatos">
+  <table width="100%" border="0" cellspacing="10" cellpadding="0">
+    <colgroup>
+      <col width="15%" />
+      <col width="85%" />
+    </colgroup>
+    <tr>
+      <td class="Text13OrangeRight"><strong>Nombre</strong></td>
+      <td class="Text13Grey"><%= h @project.name %></td>
+    </tr>
+    <tr>
+      <td class="Text13OrangeRight"><strong>Descripcion</strong></td>
+      <td class="Text13Grey"><%= h @project.description %></td>
+    </tr>
+    <tr>
+      <td class="Text13OrangeRight" valign="top"><strong>Notas</strong></td>
+      <td class="Text13Grey"><%= x_simple_format @project.notes %></td>
+    </tr>
+    <% if can_write? %>
+    <tr>
+      <td class="Text13OrangeRight" valign="top"><strong>Dirección de consulta</strong></td>
+      <td class="Text13Grey" valign="top">
+        <span id="login_url"><%= login_url_for_project(@project) %></span>
+        <%= help "Copia y envía este enlace si quieres que alguien pueda<br />consultar y descargar los gastos de esta categoría." %>
+        <br />
+        <%= mail_to nil, '[ Enviar por mail ]', :subject => @subject, :body => @body %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  
+  <br /><br />
+
+  <% name = h(@project.name) %>
+  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr class="table-row-odd">
+      <% if can_write? %>
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag('icon-nuevogasto.gif', :width => 16, :height => 16) %>
+        <%= link_to_new_expense_for  "#{icon} Nuevo gasto", @project %>
+      </td>
+      <% end %>
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag('icon-vergastos.gif', :width => 16, :height => 16) %>
+        <%= link_to "#{icon} Ver gastos", :controller => 'expenses', :action => 'of', :id => @project %>
+      </td>
+      <% if can_write? %>
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag('icon-cambiardatosgasto.gif', :width => 16, :height => 16) %>
+        <%= link_to "#{icon} Cambiar datos", :action => 'edit', :id => @project %>
+      </td>
+      <% if @project.can_be_destroyed? %>
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag('icon-borrar.gif', :width => 16, :height => 16) %>
+        <%= link_to "#{icon} Borrar", {:action => 'destroy', :id => @project}, {:confirm => "Esta acción es irreversible.\n¿Está seguro de que desea borrar esta categoría?", :method => :post} %>
+      </td>      
+      <% end %>
+      <% end %>
+    </tr>
+  </table>
+</div>
+

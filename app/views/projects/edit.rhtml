@@ -1,0 +1,6 @@
+<div id="GastoDatos">
+  <%= form_tag :action => 'edit', :id => @project %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/cancel_submit', :locals => {:cancel_url => url_for(:action => 'show', :id => @project), :submit_label => 'Modificar categoría'} %>
+  <%= end_form_tag %>
+</div>

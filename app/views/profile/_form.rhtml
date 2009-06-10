@@ -1,0 +1,68 @@
+<%# at this moment the owner is only used when editing %>
+<% @owner = @current_account.owner %>
+
+<table width="100%"  border="0" cellspacing="10" cellpadding="0">
+  <%= colgroup_for_data_tables %>
+  <% if @current_action == 'edit' %>
+  <tr>
+    <td class="Text13OrangeRight" valign="top"><label for="user_password"><strong>Contraseña</strong></label></td>
+    <td valign="top">
+      <%= password_field :current_password, '' %><br />
+      <span class="Text13Grey"><em>Para cambiar estos datos es necesario que entres tu contraseña</em></span>
+      <% if @wrong_password %>
+      <br /><span class="error">la contraseña no es correcta</span>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+  </tr>
+  <tr>
+    <td class="Text13OrangeRight"><label for="user_first_name"><strong>Nombre</strong></label></td>
+    <td>
+      <%= text_field :user, :first_name, :class => 'TableUnderline' %>
+      <%= errors_for_attr :user, :first_name %>
+    </td>
+  </tr>
+  <tr>
+    <td class="Text13OrangeRight"><label for="user_last_name"><strong>Apellidos</strong></label></td>
+    <td>
+      <%= text_field :user, :last_name, :class => 'TableUnderline' %>
+      <%= errors_for_attr :user, :last_name %>
+    </td>
+  </tr>
+  <% if @current_action == 'edit' %>
+  <tr>
+    <td class="Text13OrangeRight"><label for="user_email"><strong>Email</strong></label></td>
+    <td>
+      <%= text_field :owner, :email, :class => 'TableUnderline', :onchange => "if (!$('email_confirmation_row').visible()) {$('owner_email_confirmation').value = ''; $('email_confirmation_row').show(); $('owner_email_confirmation').focus();}" %>
+      <%= errors_for_attr :owner, :email %>
+    </td>    
+  </tr>
+  <tr id="email_confirmation_row" <%= 'style="display: none;"' unless @show_email_confirmation %>>
+    <td class="Text13OrangeRight"><label for="user_email_confirmation"><strong>Confirmar email</strong></label></td>
+    <td>
+      <%= text_field :owner, :email_confirmation, :class => 'TableUnderline' %>
+      <%= errors_for_attr :owner, :email_confirmation %>
+    </td>    
+  </tr>
+   
+  <tr>
+    <td class="Text13OrangeRight"><label for="user_last_name"><strong> <%= image_tag "login-bg.gif" %> URL OpenID *</strong></label></td>
+    <td>
+      <%= text_field :user, :openid_url, :class => 'TableUnderline' %>
+      <%= errors_for_attr :user, :openid_url %>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="Text13OrangeRight">
+      <strong>Dirección de consulta</strong>
+    </td>
+    <td valign="top">
+      <select name="change_login_url_for_agencies">
+        <option value="0" <%= 'selected="selected"' if params[:change_login_url_for_agencies] == '0' %>>Dejar la actual como está</option>
+        <option value="1" <%= 'selected="selected"' if params[:change_login_url_for_agencies] == '1' %>>Invalidar la actual y generar una nueva</option>
+      </select>
+    </td>    
+  </tr>
+  <% end %>
+</table>

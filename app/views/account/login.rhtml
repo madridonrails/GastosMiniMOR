@@ -1,0 +1,18 @@
+<div class="Title24Orange" id="titlearea">Login</div>
+
+<div id="highlightareaAyuda">
+  <div id="textareaAyuda"> 
+    <%= render :partial => 'shared/login_form' %>
+
+    <br />
+    <table class='password_data' width="500"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="Text13Grey">
+          <%= link_to 'Olvidé mi contraseña', {:action => 'send_chpass_instructions'}, :confirm => 'Se enviará un email con instrucciones al la dirección de email de contacto' %>
+        </td>
+      </tr>
+    </table>
+    
+    <br />
+  </div>
+</div>

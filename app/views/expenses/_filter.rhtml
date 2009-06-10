@@ -1,0 +1,76 @@
+<%= form_remote_tag :url => {:action=> 'filtered'} %>
+<div id="FilterGastoArea">
+	<div id="EditColumnRight">
+		<!-- fecha hasta -->
+		<div id="EditColumnRightRow">
+			<div id="EditColumnRightB" class="Fecha11White">
+				<%= check_box_tag 'expense_date_to', 1, false %>
+				<%= text_field_tag :date_to, params[:date_to], :size => 11, :onkeypress => 'return ignore_newline(event)' %>
+		  		<%= date_picker 'date_to' %>
+			</div>
+			<div id="EditColumnRightA" class="Title11DarkGrey"><label for="date_to">hasta </label></div>
+		</div>
+		<!-- fecha hasta -->
+		<!-- tipo gasto -->
+		<div id="EditColumnRightRow">
+			<div id="EditColumnRightB" class="Fecha11White">
+			    <%= plain_selector_constructor :expense_type_id, params[:expense_type_id], [['','all']] + expense_type_combo_options(@current_account) %>
+		  	</div>
+			<div id="EditColumnRightA" class="Title11DarkGrey"><label for="expense_type_id">Tipo gasto </label></div>
+		</div>
+		<!-- tipo gasto -->
+		<!-- sobre -->
+		<div id="EditColumnRightRow">
+			<div id="EditColumnRightB" class="Fecha11White">
+				<%= plain_selector_constructor :envelope, params[:envelope], [['','all'], ['Sin sobre', 'none']] + envelope_combo_options(@current_account) %>
+		  	</div>
+			<div id="EditColumnRightA" class="Title11DarkGrey"><label for="expense_envelope">Sobre </label></div>
+		</div>
+		<!-- sobre -->
+		<!-- botones -->
+		<div id="EditColumnRightRow">
+			<div id="EditColumnRightButtons" class="Fecha11White">
+				<%= submit_to_remote 'Cerrar', 'Cerrar', {:url => {:action => 'hide_filter'}, :html => {:class => 'button'}} %>
+	  			&nbsp; &nbsp; &nbsp;
+				<%= submit_to_remote 'Filtrar', 'Filtrar', {:url => {:action => 'filtered'}, :html => {:class => 'button'}} %> &nbsp; &nbsp; &nbsp;
+			</div>
+			<div id="EditColumnRightA" class="Title11DarkGrey"></div>
+		</div>
+		<!-- botones -->
+	</div>
+	<div id="EditColumnLeft">
+		<!-- fecha hasta -->
+		<div id="EditColumnLeftRow">
+			<div id="EditColumnLeftB" class="Fecha11White">
+				<%= check_box_tag 'expense_date_from', 1, false %>
+				<%= text_field_tag :date_from, params[:date_from], :size => 11, :onkeypress => 'return ignore_newline(event)' %>
+		  		<%= date_picker 'date_from' %>
+			</div>
+			<div id="EditColumnLeftA" class="Title11DarkGrey"><label for="date_from">Fecha desde </label></div>
+		</div>
+		<!-- fecha hasta -->
+		<!-- categoría -->
+		<div id="EditColumnLeftRow">
+			<div id="EditColumnLeftB" class="Fecha11White">
+			    <%= plain_selector_constructor :project_id, params[:project_id], [['','all']] + project_combo_options(@current_account) %>
+		  	</div>
+			<div id="EditColumnLeftA" class="Title11DarkGrey"><label for="project_id">Categoría </label></div>
+		</div>
+		<!-- Categoría -->
+		<!-- concepto -->
+		<div id="EditColumnLeftRow">
+			<div id="EditColumnLeftB" class="Fecha11White">
+				<%= text_field_tag :concept, params[:concept], :size => 20, :maxlength => 20 %>
+		  	</div>
+			<div id="EditColumnLeftA" class="Title11DarkGrey"><label for="concept">Concepto </label></div>
+		</div>
+		<!-- concepto -->
+		<!-- empty -->
+		<div id="EditColumnLeftRow">
+			<div id="EditColumnLeftB" class="Fecha11White">&nbsp;</div>
+			<div id="EditColumnLeftA" class="Title11DarkGrey">&nbsp;</div>
+		</div>
+		<!-- empty -->
+	</div>
+</div>
+<%= end_form_tag %>

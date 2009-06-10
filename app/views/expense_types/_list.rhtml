@@ -1,0 +1,31 @@
+<table width="100%">
+  <colgroup>
+    <col width="75%" />
+    <col width="25%" />
+  </colgroup>
+  <%= table_header_remote :labels => ['Nombre', '&nbsp;'], :non_orderable => [1], :update => 'GastoDatos' %>
+  <% if @expense_types.size > 0 %>
+  <%= render :partial => 'expense_type', :collection => @expense_types %>
+  <% else %>
+  <tr>
+    <td colspan="5" class="LabelForEmptyListing">
+      No ha creado ningún tipo de gasto por ahora,
+      <%= link_to 'haga click aquí si desea crear uno', :action => 'new' %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<% if @expense_type_pages.page_count > 1 %>
+<div id="PageNumeration" class="Text11Orange"><br />
+  <%=
+    pagination_browser(
+      :paginator => @expense_type_pages,
+      :url => {
+        :order_by  => @current_order_by,
+        :direction => @current_direction
+      }
+    )
+  %>
+</div>
+<% end %>

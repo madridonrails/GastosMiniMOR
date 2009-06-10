@@ -1,0 +1,12 @@
+<% 
+   money_title = case
+	 when @current_action == 'of_type': 'Total tipo gasto'
+	 when @current_action == 'of': 'Total categoría'
+ 	 else @filtered ? 'Total seleccionado' : 'Total gastos'
+	 end
+%>
+<div id="topStatus">
+  <span class="Title15Grey"><%= money_title %></span>
+  <br /><br />
+  <span class="Title28Orange"><%= format_money_as_decimal(@total, :force_zero => true) %></span>
+</div>

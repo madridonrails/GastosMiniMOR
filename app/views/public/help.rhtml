@@ -1,0 +1,70 @@
+﻿<div class="Title24Orange" id="titlearea">
+  Aquí tienes la lista de las preguntas m&aacute;s frecuentes
+</div>
+
+<div id="highlightareaAyuda">
+  <div id="textareaAyuda"> 
+    <ul>
+      <li class="Title18OrangeHelp">
+        <%= link_to "Acerca de #{APP_NAME}", :action => 'help', :section => 'about' %> <br />
+      </li>
+      <li class="Text13greyHelp">
+        <%= link_to "&iquest;C&oacute;mo nace #{APP_NAME}?", :action => 'help', :section => 'about' ,:anchor => "como_nace" %><br />
+      </li>
+      <li class="Text13greyHelp">
+        <%= link_to '&iquest;Qu&eacute; es un ASP?', :action => 'help', :section => 'about' ,:anchor => "asp" %><br />
+      </li>
+      <li class="Text13greyHelp">
+        <%= link_to '&iquest;Puedo ver una demo?', :action => 'help', :section => 'about', :anchor => 'demo'%><br />
+      </li>
+      <li class="Text13greyHelp">
+        <%= link_to '&iquest;Cu&aacute;nto cuesta?', :action => 'help', :section => 'about' ,:anchor => "cuanto_cuesta" %><br />
+      </li>      
+      <li class="Text13greyHelp">
+        <%= link_to "&iquest;Puedo usar #{APP_NAME} sin estar en Espa&ntilde;a?", :action => 'help', :section => 'about' ,:anchor => "puedo_usar" %><br />
+      </li>
+      <li class="Text13greyHelp">
+        <%= link_to '&iquest;Cu&aacute;nto tiempo guard&aacute;is mis gastos?', :action => 'help', :section => 'about' ,:anchor => "cuanto_tiempo" %><br />
+      </li>      
+    </ul>
+
+<br />
+
+    <ul>
+      <li class="Title18OrangeHelp">
+        <%= link_to 'Sobre los gastos', :action => 'help', :section => 'expenses' %><br />
+      </li>  
+      <li class="Text13greyHelp">
+        <%= link_to '&iquest;Puedo cambiar la fecha de mis gastos?', :action => 'help', :section => 'expenses' ,:anchor => "cambiar_fecha" %><br />
+      </li>  
+      <li class="Text13greyHelp">
+        <%= link_to "&iquest;Soporta #{APP_NAME} varias divisas?", :action => 'help', :section => 'expenses' ,:anchor => "divisas" %><br />
+      </li>          
+    </ul>
+
+<br /> 
+
+    <ul>
+      <li class="Title18OrangeHelp">
+        <%= link_to 'Funcionalidad general', :action => 'help', :section => 'general' %><br />
+      </li>
+      <li class="Text13greyHelp">
+        <%= link_to '&iquest;Puedo exportar mis datos?', :action => 'help', :section => 'general' %><br />
+      </li>
+      <li class="Text13greyHelp">
+        <%= link_to '&iquest;Qu&eacute; puedo hacer si no recuerdo mi p&aacute;gina de acceso?', :action => 'help', :section => 'general' %><br />
+      </li>
+      <li class="Text13greyHelp">
+        <%= link_to "&iquest;Qu&eacute; browsers se pueden usar con #{APP_NAME}?", :action => 'help', :section => 'general' %><br />
+      </li>
+      
+      <li class="Text13greyHelp">
+        <%= link_to '&iquest;Pueden mis clientes ver los gastos asociados a sus categorías sin contrase&ntilde;as?', :action => 'help', :section => 'general' %><br />
+      </li>
+	  <li class="Text13greyHelp">
+        <%= link_to '¿Qué significado tiene el campo sobre asociado a los gastos?', :action => 'help', :section => 'general' %><br />
+      </li>
+    </ul>
+  </div>
+  <br />
+</div>

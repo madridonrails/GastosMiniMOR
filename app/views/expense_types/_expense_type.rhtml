@@ -1,0 +1,14 @@
+<tr class="<%= cycle('table-row-even', 'table-row-odd') %>">
+  <td class="Text13Grey"><%= link_to_expense_type(expense_type) %></td>
+  <td class="Text11OrangeRight">
+  	<% if expense_type.can_be_destroyed? && can_write? %>      
+        <% icon = image_tag('icon-borrar.gif', :width => 16, :height => 16, :align=>'absmiddle') %>
+        <%= link_to "#{icon}", {:action => 'destroy', :id => expense_type}, {:confirm => "Esta acción es irreversible.\n¿Está seguro de que desea borrar este tipo de gastos?", :method => :post} %>
+		|            
+    <% end -%>
+    <% if can_write? %>
+    <%= link_to_new_expense_for_type('Nuevo gasto', expense_type) %> |
+    <% end %>
+    <%= link_to 'Ver gastos', :controller => 'expenses', :action => 'of_type', :id => expense_type %>
+  </td>
+</tr>

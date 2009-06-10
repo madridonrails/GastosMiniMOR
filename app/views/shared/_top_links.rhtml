@@ -1,0 +1,44 @@
+<div id="topLinks" class="TextLinks11Grey">
+  <span class="Title18Grey">Ir a...</span>
+  <br /><br />
+  <% if can_write? %>
+  <% icon = image_tag 'icon-addgasto.gif', :align => 'absmiddle' %>
+  <%= link_to "#{icon} Crear un gasto", :controller => 'expenses', :action => 'new', :from => nil, :id => nil %>
+  <br />
+  <% end %>
+  
+  <% icon = image_tag 'icon-listcompleto.gif', :align => 'absmiddle' %>
+  <% if can_read_all? %>
+  <%= link_to "#{icon} Listado completo de gastos", :controller => 'expenses', :action => 'list' %>
+  <% else %>
+  <%= link_to "#{icon} Listado completo de gastos", :controller => 'expenses', :action => 'of', :id => @guest[:project] %>
+  <% end %>
+  <br /><br />
+  
+  <% if can_write? %>
+  <% icon = image_tag 'icon-addproyecto.gif', :align => 'absmiddle' %>
+  <%= link_to "#{icon} Crear una categoría", :controller => 'projects', :action => 'new' %>
+  <br />
+  <% end %>
+  
+  <% if can_read_all? %>
+  <% icon = image_tag 'icon-listproyectos.gif', :align => 'absmiddle' %>
+  <%= link_to "#{icon} Listado de categorías", :controller => 'projects', :action => 'list' %>
+  <br />
+  <% end %>
+  <br />
+
+  <% if can_write? %>
+  <% icon = image_tag 'icon-creartipogasto.gif', :align => 'absmiddle' %>
+  <%= link_to "#{icon} Crear un tipo de gastos", :controller => 'expense_types', :action => 'new' %>
+  <br />
+  <% end %>
+  
+  <% if can_read_all? %>
+  <% icon = image_tag 'icon-listtipogastos.gif', :align => 'absmiddle' %>
+  <%= link_to "#{icon} Listado de tipos de gastos", :controller => 'expense_types', :action => 'list' %>
+  <br />
+  <% end %>
+  <br />
+  
+</div>

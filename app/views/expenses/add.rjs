@@ -1,0 +1,4 @@
+page.reset_expenses_lines
+page.hide_filter
+page.hide_import
+page.show_add_form(@copying)

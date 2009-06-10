@@ -1,0 +1,36 @@
+<table width="100%"  border="0" cellspacing="10" cellpadding="0">
+  <tr>
+    <td class="Text13OrangeRight" valign="top"><label for="project_name"><strong>Nombre</strong></label></td>
+    <td>
+      <%= text_field :project, :name, :class => 'TableUnderline', :size => 30 %>
+      <%= errors_for_attr :project, :name %>
+    </td>
+  </tr>
+  <tr>
+    <td class="Text13OrangeRight" valign="top"><label for="project_description"><strong>Descripción</strong></label></td>
+    <td>
+      <%= text_field :project, :description, :class => 'TableUnderline', :size => 30 %>
+      <%= errors_for_attr :project, :description %>
+    </td>
+  </tr>
+  <tr>
+    <td class="Text13OrangeRight" valign="top"><label for="project_notes">Notas</label></td>
+    <td valign="top">
+      <%= text_area :project, :notes, :class => 'TableOutline', :rows => 4, :cols => 50 %>
+      <%= errors_for_attr :project, :notes %>
+    </td>
+  </tr>  
+  <% if @current_action == 'edit' %>
+  <tr>
+    <td class="Text13OrangeRight" valign="top"><strong>Dirección de consulta</strong></td>
+    <td>
+      <select name="change_login_url_for_project">
+        <option value="0" <%= 'selected="selected"' if params[:change_login_url_for_project] == '0' %>>Dejar la actual como está</option>
+        <option value="1" <%= 'selected="selected"' if params[:change_login_url_for_project] == '1' %>>Invalidar la actual y generar una nueva</option>
+      </select>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<%#=javascript_tag 'window.setTimeout("$(\'project_name\').focus()",500)'%>

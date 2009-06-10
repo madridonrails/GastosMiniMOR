@@ -1,0 +1,4 @@
+page.reset_expenses_lines
+page.hide_add_form
+page.hide_filter
+page.show_import

@@ -1,0 +1,51 @@
+<div id="GastoDatos">
+  <% if flash[:notice] %>
+  <br/><p class="Text13Grey" style="padding: 10px 20px 10px 20px; margin: 10px 10px 5px 10px; background-color: #E6E3D7">
+    <%= flash[:notice] %>
+  </p>
+  <% end %>
+  <table width="100%" border="0" cellspacing="10" cellpadding="0">
+    <%= colgroup_for_data_tables %>
+    <tr>
+      <td class="Text13OrangeRight"><strong>Nombre</strong></td>
+      <td class="Text13Grey"><%=h @current_account.owner.first_name %></td>
+    </tr>
+    <tr>
+      <td class="Text13OrangeRight"><strong>Apellidos</strong></td>
+      <td class="Text13Grey"><%=h @current_account.owner.last_name %></td>
+    </tr>
+    <tr>
+      <td class="Text13OrangeRight"><strong>Email</strong></td>
+      <td class="Text13Grey"><%=h @current_account.owner.email %></td>
+    </tr>
+	<tr>
+      <td class="Text13OrangeRight"><strong><%= image_tag "login-bg.gif" %> URL OpenID *</strong></td>
+      <td class="Text13Grey"><%=h @current_account.owner.openid_url %></td>
+    </tr>
+    <tr>
+      <td class="Text13OrangeRight" valign="top"><strong>Dirección de consulta</strong></td>
+      <td class="Text13Grey" valign="top">
+        <span id="login_url_for_agencies"><%= login_url_for_agencies %></span>
+        <%= help "Copia y envía este enlace a tu gestor si quieres<br />que pueda consultar tus gastos."%>
+        <br />
+        <%= mail_to nil, '[ Enviar por mail ]', :subject => @subject, :body => @body %>
+      </td>
+    </tr>
+  </table>
+  
+  <% if can_write? %>
+  <br /><br />
+  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr class="table-row-odd">
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag 'icon-cambiarpassword.gif' %>
+        <%= link_to "#{icon} Cambiar mi contraseña", {:controller => 'account', :action => 'send_chpass_instructions'}, :confirm => 'Se enviará un email con instrucciones al la dirección de email de contacto' %>
+      </td>
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag 'icon-misdatos.gif' %>
+        <%= link_to "#{icon} Cambiar mis datos", :action => 'edit' %> 
+      </td>
+    </tr>
+  </table>
+  <% end %>
+</div>

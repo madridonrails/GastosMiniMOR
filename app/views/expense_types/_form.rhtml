@@ -1,0 +1,11 @@
+<table width="100%"  border="0" cellspacing="10" cellpadding="0">
+  	<tr>
+    	<td class="Text13OrangeRight" valign="top"><label for="expense_type_name"><strong>Nombre</strong></label></td>
+    	<td>
+      		<%= text_field :expense_type, :name, :class => 'TableUnderline', :size => 30 %>
+      		<%= errors_for_attr :expense_type, :name %>
+    	</td>
+  	</tr>
+</table>
+
+<%#=javascript_tag 'window.setTimeout("$(\'expense_type_name\').focus()",500)'%>

@@ -1,0 +1,45 @@
+<table width="100%" cellspacing="0">
+ 	<colgroup>
+    	<col width="10%" />
+    	<col width="15%" />
+	    <col width="15%" />
+	    <col width="20%" />
+	    <col width="12%" />
+	    <col width="12%" />
+   		<col width="3%" />
+    	<col width="13%" />
+  	</colgroup>
+	<%= table_header_remote({:labels => ['Fecha', 'Categoría', 'Tipo Gasto', 'Concepto', 'Sobre', 'Importe', '&nbsp;', '&nbsp;'], :non_orderable => [6, 7], :update => 'list'}, params) %>
+ 	<% if @expenses.size > 0 %>
+   	<%= render :partial => 'expense', :collection => @expenses %>
+ 	<% else%>
+ 	<tr>
+   		<td colspan="8" class="LabelForEmptyListing">
+     		<% if @current_action == 'list' %>
+     		No ha creado ningún gasto por ahora
+     		<%= link_to 'haga click aquí si desea crear uno', :action => 'new' %>
+     		<% elsif @current_action == 'pending' %>
+    		No tiene ningún gasto pendiente de cobro
+    		<% elsif @current_action == 'of' %>
+    		No ha creado ningún gasto para <%= link_to_project @current_project %> por ahora
+    		<% elsif @current_action == 'of_type' %>
+     		No ha creado ningún gasto de tipo <%= link_to_expense_type @current_expense_type %> por ahora
+    		<% end %>
+   		</td>
+ 	</tr>
+ 	<% end %>
+</table>
+
+<% if @expense_pages.page_count > 1 %>
+<div id="PageNumeration" class="Text11Orange"><br />
+  <%=
+    pagination_browser({
+      :paginator => @expense_pages,
+      :url => {
+        :order_by  => @current_order_by,
+        :direction => @current_direction,
+      }}, params
+    )
+  %>
+</div>
+<% end %>

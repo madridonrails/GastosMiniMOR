@@ -1,0 +1,20 @@
+<tr class="<%= cycle('table-row-even', 'table-row-odd') %>">
+  <td class="Text13Grey"><%= link_to_project(project) %></td>
+  <td class="Text11OrangeRight">
+  	<% if project.can_be_destroyed? && can_write? %>      
+        <% icon = image_tag('icon-borrar.gif', :width => 16, :height => 16, :align => 'absmiddle') %>
+        <%= link_to "#{icon}", {:action => 'destroy', :id => project}, {:confirm => "Esta acción es irreversible.\n¿Está seguro de que desea borrar esta categoría?", :method => :post} %>
+		|     
+	<%end -%>
+	
+    <% if can_write? %>
+    <%= link_to_new_expense_for('Nuevo gasto', project) %> |
+    <% end %>
+    <%= link_to 'Ver gastos', :controller => 'expenses', :action => 'of', :id => project %>
+	
+  </td>
+</tr>
+
+
+
+   

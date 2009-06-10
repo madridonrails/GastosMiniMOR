@@ -1,0 +1,43 @@
+<div id="GastoDatos">
+  <table width="100%" border="0" cellspacing="10" cellpadding="0">
+    <colgroup>
+      <col width="15%" />
+      <col width="85%" />
+    </colgroup>
+    <tr>
+      <td class="Text13OrangeRight"><strong>Nombre</strong></td>
+      <td class="Text13Grey"><%= h @expense_type.name %></td>
+    </tr>
+  </table>
+  
+  <br /><br />
+
+  <% name = h(@expense_type.name) %>
+  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr class="table-row-odd">
+      <% if can_write? %>
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag('icon-nuevogasto.gif', :width => 16, :height => 16) %>
+        <%= link_to_new_expense_for_type "#{icon} Nuevo gasto", @expense_type %>
+      </td>
+      <% end %>
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag('icon-vergastos.gif', :width => 16, :height => 16) %>
+        <%= link_to "#{icon} Ver gastos", :controller => 'expenses', :action => 'of_type', :id => @expense_type %>
+      </td>
+      <% if can_write? %>
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag('icon-cambiardatosgasto.gif', :width => 16, :height => 16) %>
+        <%= link_to "#{icon} Cambiar datos", :action => 'edit', :id => @expense_type %>
+      </td>
+      <% if @expense_type.can_be_destroyed? %>
+      <td align="center" class="Text13Grey">
+        <% icon = image_tag('icon-borrar.gif', :width => 16, :height => 16) %>
+        <%= link_to "#{icon} Borrar", {:action => 'destroy', :id => @expense_type}, {:confirm => "Esta acción es irreversible.\n¿Está seguro de que desea borrar este tipo de gastos?", :method => :post} %>
+      </td>      
+      <% end %>
+      <% end %>
+    </tr>
+  </table>
+</div>
+

@@ -1,0 +1,118 @@
+#
+# -- [ reserved subdomains ] --------------------------------------------------
+#
+
+reserved_subdomains:
+  - www
+  - aspgems
+  - test
+  - dev
+
+#
+# -- [ root ] --------------------------------------------------
+#
+
+root_login: 'root'
+root_password: 'admin'
+
+#
+# -- [ pagination ] -----------------------------------------------------------
+#
+
+pagination_window: 5
+
+#
+# -- [ chpass mail ] ----------------------------------------------------------
+#
+
+chpass_mail_from: <%= APP_NAME %> Soporte <<%=CONTACT_EMAIL_ACCOUNTS%>>
+chpass_mail_subject: Instrucciones para cambiar tu contraseña en <%= APP_NAME %>
+chpass_mail_body: |
+  Puedes configurar una nueva contraseña para acceder a tu cuenta en <%= APP_NAME %>
+  siguiendo este enlace temporal,<br/><br/>
+    
+    <%= url_for_chpass %><br/><br/>
+    
+  Una vez lo hayas visitado quedará desactivado, si bien podrás generar otro
+  válido en cualquier momento clicando de nuevo en "He olvidado mi contraseña".<br/><br/>
+  
+  Agradecemos tu confianza en <%= APP_NAME %>,<br/><br/>
+  
+  <%= APP_NAME %> Soporte<br/><br/>
+
+ensure_we_are_completely_dedented_from_here_on: 1
+
+#
+# -- [welcome mail] -----------------------------------------------------------
+#
+
+welcome_mail_from: <%= APP_NAME %> <<%=CONTACT_EMAIL_ACCOUNTS%>>
+welcome_mail_subject: Bienvenido a <%= APP_NAME %>
+welcome_mail_body: |
+  ¡Bienvenido a <%= APP_NAME %>!<br/><br/>
+ 
+    La direccion personalizada de acceso a tu cuenta es:<br/><br/>
+      
+    <%= url_for_account %><br/><br/>
+ 
+     Por favor, guarda este correo para usarlo como referencia por si olvidas esa
+     dirección.<br/><br/>
+ 
+     Agradecemos tu confianza en <%= APP_NAME %>,<br/><br/>
+
+     El equipo de <%= APP_NAME %><br/><br/>
+
+ensure_we_are_completely_dedented_at_the_end: 1
+
+#
+# -- [mail for agencies login URL] --------------------------------------------
+#
+
+# There are no addresses because this is a template for a real mail launched in
+# the mail client of the user.
+agencies_login_url_mail_subject: Dirección de consulta de mis gastos en <%= APP_NAME %>
+agencies_login_url_mail_body: |
+  Puedes consultar y descargar mis gastos siguiendo este enlace:
+    
+    <%= login_url_for_agencies %>
+  
+  Saludos,
+  
+  P.D.: Prueba <%= APP_NAME %> gratis en http://www.<%= DOMAIN_NAME %>.
+
+ensure_we_are_completely_dedented_at_the_end: 1
+
+#
+# -- [mail for project login URL] --------------------------------------------
+#
+
+# There are no addresses because this is a template for a real mail launched in
+# the mail client of the user.
+project_login_url_mail_subject: Dirección de consulta de mis gastos en <%= APP_NAME %>
+project_login_url_mail_body: |
+  Puedes consultar y descargar las gastos que te he cargado siguiendo este enlace:
+    
+    <%= login_url_for_project(@project) %> 
+  
+  Saludos,
+  
+  P.D.: Prueba <%= APP_NAME %> gratis en http://www.<%= DOMAIN_NAME %>.
+
+ensure_we_are_completely_dedented_at_the_end: 1
+
+#
+# -- [mail for accounts remainder] --------------------------------------------
+#
+
+accounts_reminder_mail_from: <%= APP_NAME %> <<%=CONTACT_EMAIL_ACCOUNTS%>>
+accounts_reminder_mail_subject: Tus cuentas en <%= APP_NAME %>
+accounts_reminder_mail_body: |
+  La dirección de acceso de tus cuentas en <%= APP_NAME %> es:<br/><br/>
+  
+    <%= urls.join("\n  ") %><br/><br/>
+  
+  Agradecemos tu confianza en <%= APP_NAME %>,<br/><br/>
+  
+  El equipo de <%= APP_NAME %>  <br/><br/>
+
+ensure_we_are_completely_dedented_at_the_end: 1

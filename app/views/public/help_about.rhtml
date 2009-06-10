@@ -1,0 +1,77 @@
+﻿<div class="Title24Orange" id="titlearea">
+  <%= link_to 'Ayuda', :action => 'help', :section => nil %>
+  <span class="Text18Orange">&gt;</span>
+  Acerca de <%= APP_NAME %>
+</div>
+
+<div id="highlightareaAyuda">
+  <div id="textareaAyuda">
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" name="como_nace">&iquest;C&oacute;mo nace <%= APP_NAME %> ?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+      <%= APP_NAME %>  es el resultado de la necesidad de realizar un control de los gastos
+      de una forma intuitiva, sin necesidad de aplicaciones complicadas. Crear un gasto es
+      r&aacute;pido y sencillo con <%= APP_NAME %> . &Eacute;ste era uno de los objetivos clave de dise&ntilde;o del
+	programa y hemos puesto todo nuestro empe&ntilde;o en conseguirlo. La creaci&oacute;n de un gasto
+	es m&aacute;s f&aacute;cil incluso que con una hoja de c&aacute;lculo.
+    </div>
+ <br /> 
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" name="asp">&iquest;Qu&eacute; es un ASP?</span>
+      <%= ir_al_principio %>    
+	    <%= help_answer_separator %>
+      ASP son las siglas de &laquo;Application Service Provider&raquo;, en castellano
+      &laquo;proveedor de aplicaciones como servicios&raquo;, y describe aquellas
+      aplicaciones inform&aacute;ticas que son utilizadas por los clientes como un servicio.
+      Sus ventajas fundamentales son:
+      <!-- override the naked style inherited at this point for lists -->
+      <ul>
+        <li>Pagas s&oacute;lo seg&uacute;n lo usas, no hay inversi&oacute;n.</li>
+        <li>Sin instalaci&oacute;n: t&uacute; te olvidas y nosotros nos encargamos de toda la parte t&eacute;cnica.</li>
+        <li>Sin mantenimiento: sigue olvid&aacute;ndote de los detalles, nosotros nos ocupamos.</li>
+        <li>Modelo en red de acceso: disfruta de la ventajas de las aplicaciones en la red, 
+        accesible en cualquier momento, desde cualquier ordenador, s&oacute;lo necesitas un navegador.
+        Y adem&aacute;s puedes dar acceso restringido a la aplicaci&oacute;n a tus clientes o a tu gestor.</li>
+      </ul>
+    </div>
+    <br />
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" name="demo">&iquest;Puedo ver una demo?</span> 
+      <%= ir_al_principio %>    
+	    <%= help_answer_separator %>
+      Pues casi mejor que una demo <%= link_to 'REG&Iacute;STRATE GRATIS', :action => 'signup' %> y usa la aplicaci&oacute;n entera.
+      Las diez priemeras gastos puedes hacerlos sin coste alguno y sin compromiso de
+      ning&uacute;n tipo.
+    </div> 
+    <br />
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" name="cuanto_cuesta">&iquest;Cu&aacute;nto cuesta?</span>
+      <%= ir_al_principio %>          
+      <%= help_answer_separator %>
+	<%= APP_NAME %>  es una aplicaci&oacute;n gratuita, no es necesario realizar ning&uacute;n pago para su uso. Nuestra 
+	financiación es la publicidad. Si quieres ayudarnos, pulsa los links que te interesen de la publicidad que 
+	vayas viendo.
+    </div>    
+    <br />
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" name="puedo_usar">&iquest;Puedo usar <%= APP_NAME %>  sin estar en Espa&ntilde;a?</span>
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+      S&iacute;, puedes usar la aplicaci&oacute;n desde cualquier lugar. 
+    </div> 
+       <br />
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" name="cuanto_tiempo">&iquest;Cu&aacute;nto tiempo guard&aacute;is mis gastos?</span>
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+	    Siempre, salvo que t&uacute; indiques lo contrario. Tus gastos estar&aacute;n guardadas en nuestros
+	    servidores hasta que t&uacute; decidas que las borremos, o lo hagas t&uacute; mismo a trav&eacute;s de la
+	    aplicaci&oacute;n. Siempre de acuerdo con la legislaci&oacute;n vigente.
+	  </div>
+	  <br />
+	  <%= date_una_vuelta_o_registrate %>
+  </div>  
+</div>
+
+

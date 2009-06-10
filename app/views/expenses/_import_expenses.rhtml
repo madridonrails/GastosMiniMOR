@@ -1,0 +1,29 @@
+<% @options=({:action => 'import_csv'}) %>
+<%=  form_remote_upload_tag :url => @options,
+            :html => { :href => url_for(@options), :id => 'import-form', :method => 'post', 
+					   :enctype => "multipart/form-data", :target => 'import' }
+%>
+<div id="ImportGastosArea">
+    <%= render :partial => 'import_hint' %>
+	<div id="ImportColumnRight">
+		<div id="ImportColumnRightRow">
+			<div id="ImportColumnRightButtons" class="Fecha11White">
+				<%= submit_to_remote 'Cancelar', 'Cancelar', {:url => {:action => 'cancel_import'}, :html => {:class => 'button'}} %>
+	  			&nbsp; &nbsp; &nbsp;
+				<%= submit_tag 'Importar', :class => "button" %> &nbsp; &nbsp; &nbsp;
+			</div>
+		</div>
+	</div>
+	<div id="ImportColumnLeft">
+		<div id="ImportColumnLeftRow">
+			<div id="EditColumnLeftB" class="Fecha11White">
+           		<%= file_field_tag 'csv', :id => 'csv_uploaded_data' %>
+			</div>
+             <div id="EditColumnLeftA" class="Title11DarkGrey"><label for="expense_project_id">Fichero CSV* </label></div>
+        </div>            
+    </div>
+    <div class='importerror'>
+		<%= errors_for_attr :expense, :base %>
+	</div>
+</div>
+<%= end_form_remote_upload_tag ('import')%>

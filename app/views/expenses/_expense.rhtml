@@ -1,0 +1,7 @@
+<tr id='ShowGasto_<%= expense.id %>' class="expense_show_tr <%= cycle('table-row-even', 'table-row-odd') %>">
+	<%= render :partial => 'expense_line', :locals => {:expense => expense} %>
+</tr>
+<% if can_write? %>
+<tr id='EditGasto_<%= expense.id %>' class='expense_edit_tr' style='display: none'>
+</tr>
+<% end %>

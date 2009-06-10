@@ -1,0 +1,20 @@
+<tr class="<%= cycle('table-row-even', 'table-row-odd') %>">
+  <td class="Text13Grey" onmouseover="TagToTip('short_name_<%= account.id %>')">
+    <%=h account.name %><span id="short_name_<%= account.id %>" style="display: none"><%=h account.short_name %></span>
+  </td>  
+  <td class="Text13Grey">
+    <%=h account.owner.email %>
+  </td>
+  <td class="Text13Grey">
+    <%= format_date account.created_at.to_date %>
+  </td>
+  <td class="Text13Grey">
+    <%= format_date(account.owner.last_seen_at.to_date) rescue '' %>
+  </td>
+  <td class="Text13Grey numeric">
+    <%=h account.expenses.count %>
+  </td>  
+  <td class="Text13Grey numeric">
+    <%=h account.projects.count %>
+  </td>  
+</tr>

@@ -1,0 +1,17 @@
+  	<td class="Text10DarkGrey2"><%= format_date_short(expense.date) %></td>
+  	<td class="Text10DarkGrey"><%= link_to_project(expense.project) %></td>
+  	<td class="Text10DarkGrey"><%= link_to_project(expense.expense_type) %></td>
+  	<td class="Text10DarkGrey"><%= h expense.concept %></td>
+  	<td class="Text10DarkGrey"><%= h expense.envelope %></td>
+  	<td class="Text10DarkGrey numeric" nowrap="nowrap"><%= format_money_as_decimal(expense.amount) %></td>
+  	<td class="Text10DarkGrey"><%= tooltip(h(expense.notes), true, 60) %></td>
+  	<td class="Text10DarkGrey" nowrap="nowrap">
+	    <% if can_write? %>
+		<% icon = image_tag 'icon-edit.gif', :width => 16, :height => 16, :class => 'imgTableIcons' %>
+	    <%= link_to_remote "#{icon}", {:url => {:action => 'edit', :id => expense}} %>
+		<% icon = image_tag 'icon-duplicate.gif', :width => 16, :height => 16, :class => 'imgTableIcons' %>
+	    <%= link_to_remote "#{icon}", {:url => {:action => 'add', :from => 'copying', :id => expense}} %>
+		<% icon = image_tag 'icon-borrar.gif', :width => 16, :height => 16, :class => 'imgTableIcons' %>
+	    <%= link_to "#{icon}", {:action => 'destroy', :id => expense}, {:confirm => "Esta acción es irreversible.\n¿Está seguro de que desea borrar este gasto?", :method => :post} %>
+	    <% end %>
+	</td>

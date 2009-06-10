@@ -1,0 +1,5 @@
+<span id="expense-project">
+	<%= project_selector :expense, :project_id, @current_account, 'Categoría', @expense.project_id %>
+	<%= link_to_redbox '[Nuevo]', 'redbox-for-new-project' %>
+	<%= errors_for_attr :expense, :project_id %>
+</span>

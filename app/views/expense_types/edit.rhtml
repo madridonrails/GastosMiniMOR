@@ -1,0 +1,6 @@
+<div id="GastoDatos">
+  	<%= form_tag :action => 'edit', :id => @expense_type %>
+  		<%= render :partial => 'form' %>
+  		<%= render :partial => 'shared/cancel_submit', :locals => {:cancel_url => url_for(:action => 'show', :id => @expense_type), :submit_label => 'Modificar tipo de gasto'} %>
+  	<%= end_form_tag %>
+</div>

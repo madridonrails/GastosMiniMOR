@@ -1,0 +1,61 @@
+<p class="Title18Grey">Rellena los campos a continuación para acceder a tu cuenta <%= APP_NAME %>.</p>
+<p class="error"><%= flash[:notice]%></p>
+<% form_tag do -%>
+<table class='password_data' width="500" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="Title14Orange">Email</td>
+  </tr>
+  <tr>
+    <td class="Text13Grey">
+      <%= text_field_tag 'login', params[:login], :autocomplete => 'on', :class => "formField email" %>
+    </td>
+  </tr>
+</table>
+
+<br />
+
+<table class='password_data' width="500" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="Title14Orange">Contrase&ntilde;a</td>
+  </tr>
+  <tr>
+    <td class="Text13Grey">
+      <%= password_field_tag 'password', nil, :class => "formField password" %>
+    </td>
+  </tr>
+</table>
+
+
+<table class='open_id_data' width="500" border="0" cellspacing="0" cellpadding="0" style="display: none;">
+  <tr>
+    <td class="Title14Orange"><%= image_tag "login-bg.gif" %> URL OpenID</td>
+  </tr>
+  <tr>
+    <td class="Text13Grey">
+      <%= text_field_tag 'openid_url', params[:openid_url], :class => "formField identity_url" %>
+    </td>
+  </tr>
+</table>
+
+<br />
+
+<table width="500"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      <span class="CellTablebuttonL">
+        <%= submit_tag 'Acceder', :class => 'button' %>
+      </span>
+    </td>
+  </tr>
+</table>
+
+<p class='password_data' style='text-align:right;'>
+	Acceso mediante <span class="Text16Orange"><a onclick="switchToOpenId($(this).up(3)); return false;" href="#">OpenID</a></span>
+</p>
+
+<p class='open_id_data' style="display: none;text-align:right;">
+	Acceso mediante <span class="Text16Orange"><a onclick="swithToUserNameAndPassword($(this).up(3)); return false;" href="#">email y contraseña</a></span>
+</p>
+
+
+<% end %>

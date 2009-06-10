@@ -1,0 +1,38 @@
+# == Schema Information
+# Schema version: 2
+#
+# Table name: expenses
+#
+#  id                   :integer(11)   not null, primary key
+#  account_id           :integer(11)   not null
+#  project_id           :integer(11)   not null
+#  expense_type_id      :integer(11)   not null
+#  date                 :date          
+#  amount               :decimal(10, 2 
+#  concept              :string(255)   not null
+#  concept_for_sorting  :string(255)   
+#  notes                :text          
+#  envelope             :string(255)   
+#  envelope_for_sorting :string(255)   
+#  created_at           :datetime      
+#  updated_at           :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+transporte:
+  id: 1
+  account_id: 1
+  project_id: 1
+  expense_type_id: 1
+  date: <%= 5.days.ago.to_s :db %>         
+  amount: 25.5
+  concept: 'Viaje en taxi'
+  
+parking:
+  id: 2
+  account_id: 1
+  project_id: 1
+  expense_type_id: 2
+  date: <%= 5.days.ago.to_s :db %>         
+  amount: 31.3
+  concept: 'Parking en Madrid'

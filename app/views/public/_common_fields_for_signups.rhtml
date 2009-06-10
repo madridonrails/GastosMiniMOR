@@ -1,0 +1,63 @@
+<p>
+  ¿Cuál es el nombre de tu empresa u organización? *<br />
+  <%= text_field :account, :name, :size => 40, :class => "formField" %>
+  <%= errors_for_attr :account, :name %>
+</p>
+
+<p>
+  Elige una dirección personalizada para tu página de acceso *<br />
+  http://
+  <%= text_field :account, :short_name, :class => "formField", :style => 'text-align: center;', :onkeypress => 'autofit(this)', :onchange => 'autofit(this); check_availability_of_short_name(this)' %>
+  .<%= DOMAIN_NAME %><span id="available"><!-- for Ajax --></span>
+  <%= errors_for_attr :account, :short_name %>
+</p>
+<table width="500" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%" valign="top">
+      Email de contacto *<br />
+      <%= text_field :account_owner, :email, :size => 20, :class => 'formField email' %>
+      <%= errors_for_attr :account_owner, :email %>
+    </td>
+    <td width="50%">
+      Confirmar Email *<br />
+      <%= text_field :account_owner, :email_confirmation, :size => 20, :class => 'formField email' %>
+    </td>
+  </tr>
+</table>
+
+<table class='password_data' width="500" border="0" cellspacing="0" cellpadding="0">
+  <tr valign="top">
+    <td width="50%">
+      Contraseña *<br />
+      <%= password_field :account_owner, :password, :size => 20, :class => 'formField password' %>
+      <%= errors_for_attr :account_owner, :password %>
+    </td>
+    <td width="50%">
+      Confirmar contraseña *<br />
+      <%= password_field :account_owner, :password_confirmation, :size => 20, :class => 'formField password' %>
+    </td>
+  </tr>
+</table>
+
+<p class='password_data'>
+	Si lo prefieres puedes <span class="Text13Orange"><a onclick="switchToOpenId($(this).up(3)); return false;" href="#">usar OpenID</a></span> para registrarte en <%= APP_NAME %>
+</p>
+
+<table class='open_id_data' width="500" border="0" cellspacing="0" cellpadding="0" style="display: none;">
+  <tr valign="top">
+    <td width="50%">
+      <%= image_tag "login-bg.gif" %> URL OpenID *<br />
+      <%= text_field :account_owner, :openid_url, :size => 40, :class => 'formField identity_url' %>
+      <%= errors_for_attr :account_owner, :openid_url %>
+    </td>
+    <td width="50%">
+      &nbsp;
+    </td>
+  </tr>
+</table>
+
+<p class='open_id_data' style="display: none;">
+	Si lo prefieres puedes <span class="Text13Orange"><a onclick="swithToUserNameAndPassword($(this).up(3)); return false;" href="#">usar email y contraseña</a></span> para registrarte en <%= APP_NAME %>
+</p>
+
+

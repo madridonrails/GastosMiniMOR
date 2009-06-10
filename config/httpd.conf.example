@@ -1,0 +1,56 @@
+# This is the recommend MIME type according to http://en.wikipedia.org/wiki/Favicon.
+AddType image/vnd.microsoft.icon .ico
+
+# Configure the balancer to dispatch to the Mongrel cluster. The number of servers
+# and their ports must match those configured in config/mongrel_cluster.yml.
+<Proxy balancer://gastosmini_cluster>
+  BalancerMember http://127.0.0.1:3010
+  BalancerMember http://127.0.0.1:3011
+  BalancerMember http://127.0.0.1:3012
+</Proxy>
+
+# VirtualHost for the Rails application.
+NameVirtualHost *:8080
+<VirtualHost *:8080>
+  ServerAdmin admin@example.com
+  ServerName  www.gastosmini.com
+  ServerAlias localhost
+
+  # Not supported on Mac OS X.
+  EnableSendfile On
+
+  DocumentRoot /home/gastosmini/current/public
+  <Directory '/home/gastosmini/current/public'>
+    Options FollowSymLinks
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+  </Directory>
+
+  # Setup your Rewrite rules here
+  RewriteEngine On
+
+  # This rewrites all dynamic requests to /system/maintenance.html if that
+  # file exists, this file is created by Capistrano's disable task.
+  RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
+  RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+  RewriteRule ^.*$ /system/maintenance.html [L]
+
+  # Let Apache serve directly all resources below these directories.
+  ProxyPass /images !
+  ProxyPass /logos !
+  ProxyPass /stylesheets !
+  ProxyPass /javascripts !
+  ProxyPass /favicon.ico !
+  ProxyPass /system !
+  ProxyPass / balancer://gastosmini_cluster/
+  ProxyPassReverse / balancer://gastosmini_cluster/
+
+  # Compress common non-binary content.
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript
+
+  # Error logs
+  ErrorLog /home/gastosmini/current/log/apache_error_log
+  CustomLog /home/gastosmini/current/log/apache_access_log combined
+</VirtualHost>

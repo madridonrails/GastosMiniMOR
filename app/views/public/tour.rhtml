@@ -1,0 +1,37 @@
+<%= render :partial => 'tour_menu'%>
+
+<div id="highlightareaTour1">
+  <div id="highlightareaTour2">
+    <%= video_tag 'gastosmini.flv', 744, 510 %>
+  </div>
+  
+  <div id="textareaTour">
+    <span class="Title18DarkGrey">Los elementos más importantes de <%= APP_NAME %></span>
+    <br />
+    
+    <div class="Text13Grey">
+     Los elementos más relevantes de <%= APP_NAME %> son cinco:
+      <ul>
+        <li>
+          <strong>Tus gastos:</strong>
+          Que puedes emitir, cambiar, copiar, borrar, exportar, etc.<br />
+        </li>
+        <li><strong>Tus categorías:</strong>
+          Con sus datos básicos, y url de acceso de consulta
+ 	    para enviar a otras personas, etc.<br />
+        </li>
+		<li><strong>Tus tipos de gastos:</strong>
+          Qué te permitirán organizar tus gastos de una manera cómoda e intuitiva<br />
+        </li>
+        <li><strong>Comparte tus gastos:</strong>
+          Si quieres, mediante enlaces seguros podrás dar acceso <strong>de lectura</strong> a 
+		  una tercera persona por ejemplo: tus clientes, gestoría o persona de tu organización.
+		  Podrá ver y exportar gastos, pero no modificarlos.
+          El acceso por categoría está restringido a las gastos de esa categoría.<br />
+        </li>
+      </ul>
+    </div>
+    
+    <%= registrate_gratis %>
+  </div>
+</div>

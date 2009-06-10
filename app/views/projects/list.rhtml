@@ -1,0 +1,12 @@
+<% unless logged_in_as_guest? -%>
+	<div id="TableFastLinks" class="TextLinks11Grey">
+		<% icon = 'Añadir una nueva categoría ' + image_tag('icon-addGasto2.gif', :width => 16, :height => 16, :align => 'absmiddle') %>
+	    <%= link_to "#{icon}", :controller => 'projects', :action => 'new' %>
+	</div>
+<% end -%>
+
+<div id="GastoDatos">
+  <div id="list">
+    <%= render :partial => 'list' %>
+  </div>
+</div>
